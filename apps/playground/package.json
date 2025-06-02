@@ -1,0 +1,44 @@
+{
+  "name": "@scope/playground",
+  "description": "Playground for SolidJS monorepo",
+  "author": "Daniel Sanchez <dsanc89@icloud.com>",
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/thedanchez/template-solidjs-monorepo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedanchez/template-solidjs-monorepo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thedanchez/template-solidjs-monorepo/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "vite build",
+    "clean": "rimraf node_modules dist",
+    "format": "prettier . --check",
+    "format:fix": "prettier . --write",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "serve": "vite preview",
+    "start": "vite",
+    "start:server": "bun run server/index.ts",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@scope/hello-a": "workspace:*",
+    "@scope/hello-b": "workspace:*",
+    "@solidjs/router": "^0.15.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.13",
+    "solid-js": "^1.9.9",
+    "vite": "^7.1.4",
+    "vite-plugin-solid": "^2.11.8"
+  }
+}

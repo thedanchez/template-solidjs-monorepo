@@ -1,0 +1,60 @@
+{
+  "name": "@scope/root",
+  "description": "Template for SolidJS monorepo using tsup for bundling. Configured with Bun, NVM, TypeScript, ESLint, Prettier, Vitest, and GHA",
+  "author": "Daniel Sanchez <dsanc89@icloud.com>",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/thedanchez/template-solidjs-monorepo#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedanchez/template-solidjs-monorepo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thedanchez/template-solidjs-monorepo/issues"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "turbo run build",
+    "build:pkg": "turbo run --filter='./packages/*' build",
+    "build:storybook": "turbo run --filter='@scope/storybook' build",
+    "clean": "turbo run clean && rimraf node_modules",
+    "format": "turbo run format",
+    "format:fix": "turbo run format:fix",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo run lint:fix",
+    "pkg:changeset": "changeset",
+    "pkg:version": "changeset version",
+    "pkg:publish": "bun run build:pkg && changeset publish",
+    "test": "turbo run test",
+    "test:cov": "turbo run test:cov",
+    "playground": "turbo run --filter='@scope/playground' start",
+    "storybook": "turbo run --filter='@scope/storybook' storybook",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.6",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/bun": "^1.2.21",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
+    "eslint": "^9.35.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-solid": "^0.14.5",
+    "globals": "^16.3.0",
+    "jiti": "^2.5.1",
+    "prettier": "^3.6.2",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.5.6",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.42.0"
+  },
+  "packageManager": "bun@1.2.15"
+}
