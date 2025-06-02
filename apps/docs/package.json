@@ -1,0 +1,58 @@
+{
+  "name": "@scope/storybook",
+  "version": "0.0.0",
+  "private": true,
+  "homepage": "https://github.com/thedanchez/template-solidjs-monorepo#readme",
+  "bugs": {
+    "url": "https://github.com/thedanchez/template-solidjs-monorepo/issues"
+  },
+  "license": "MIT",
+  "author": "Daniel Sanchez <dsanc89@icloud.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedanchez/template-solidjs-monorepo.git"
+  },
+  "files": [
+    ".storybook/**",
+    "stories/**",
+    "types/**",
+    "package.json",
+    "tsconfig.json",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "storybook build",
+    "clean": "rimraf node_modules storybook-static",
+    "preview-storybook": "serve storybook-static",
+    "storybook": "storybook dev -p 6006",
+    "test": "vitest --run --update",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@kachurun/storybook-solid-vite": "9.0.11",
+    "@storybook/addon-a11y": "catalog:storybook",
+    "@storybook/addon-docs": "catalog:storybook",
+    "@storybook/addon-links": "catalog:storybook",
+    "@storybook/addon-onboarding": "catalog:storybook",
+    "@storybook/addon-vitest": "catalog:storybook",
+    "@storybook/builder-vite": "catalog:storybook",
+    "@types/node": "25.5.0",
+    "@vitest/browser": "4.1.1",
+    "@vitest/coverage-v8": "4.1.1",
+    "playwright": "1.58.2",
+    "serve": "14.2.6",
+    "solid-js": "catalog:solid",
+    "storybook": "catalog:storybook"
+  },
+  "peerDependencies": {
+    "solid-js": "*",
+    "typescript": "*",
+    "vite": "*",
+    "vite-plugin-solid": "*",
+    "vitest": "*"
+  }
+}

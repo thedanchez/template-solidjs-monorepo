@@ -1,0 +1,9 @@
+{
+  "extends": "@dschz/tsconfig/solid",
+  "compilerOptions": {
+    "paths": {
+      "@scope/*": ["./packages/*/src"]
+    }
+  },
+  "exclude": ["**/node_modules", "**/coverage", "**/dist", "**/storybook-static"]
+}

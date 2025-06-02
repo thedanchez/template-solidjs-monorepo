@@ -1,0 +1,55 @@
+{
+  "name": "@scope/hello-a",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Monorepo Package A",
+  "homepage": "https://github.com/thedanchez/template-solidjs-monorepo#readme",
+  "bugs": {
+    "url": "https://github.com/thedanchez/template-solidjs-monorepo/issues"
+  },
+  "license": "MIT",
+  "author": "Daniel Sanchez <dsanc89@icloud.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thedanchez/template-solidjs-monorepo.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "browser": {},
+  "types": "./dist/index.d.ts",
+  "typesVersions": {},
+  "exports": {
+    "solid": "./dist/index.jsx",
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "build:watch": "tsup --watch",
+    "clean": "rimraf node_modules dist",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@solidjs/testing-library": "catalog:solid",
+    "@testing-library/jest-dom": "catalog:testing",
+    "@vitest/coverage-istanbul": "catalog:testing",
+    "jsdom": "catalog:testing",
+    "tsup": "catalog:tooling",
+    "tsup-preset-solid": "catalog:tooling",
+    "vitest": "catalog:testing"
+  },
+  "peerDependencies": {
+    "solid-js": ">=1.6.0"
+  }
+}
